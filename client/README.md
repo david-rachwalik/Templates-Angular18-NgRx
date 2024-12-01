@@ -49,7 +49,7 @@ Generate a new Angular component
 npm run ng -- g c <component-name>
 ```
 
-Example of generating the Blog section
+Example of generating a Blog section
 
 ```bash
 npm run ng -- g m modules/blog --module=app --route=blog --routing
@@ -63,26 +63,13 @@ npm run ng -- g c modules/blog/pages/blog-post --module=blog
 
 ### Project Creation Commands Used
 
-Generate a new Angular application ([tutorial](https://angular.io/tutorial/toh-pt5), [layouts](https://indepth.dev/posts/1235/how-to-reuse-common-layouts-in-angular-using-router-2), [RxJS](https://www.learnrxjs.io))
+Generate a new Angular application ([tutorial](https://angular.io/tutorial/toh-pt5), [layouts](https://indepth.dev/posts/1235/how-to-reuse-common-layouts-in-angular-using-router-2))
 
 ```bash
 ng new <app-name>
 ```
 
-Install [Tailwind CSS](https://tailwindcss.com/docs/guides/angular) with configuration file ([CheatSheet](https://nerdcave.com/tailwind-cheat-sheet), [Need-to-Know](https://www.bitovi.com/blog/tailwind-css-with-angular-v12-what-you-need-to-know), [Use with preprocessors](https://tailwindcss.com/docs/using-with-preprocessors), [Box Shadow](https://tailwindcss.com/docs/box-shadow))
-
-```bash
-npm i -D tailwindcss
-npx tailwindcss init
-```
-
-Install [Angular Material](https://material.angular.io) ("custom" theme, 'y' typography, 'y' animations) ([background](https://material.angular.io/guide/theming#application-background-color))
-
-```bash
-npm run ng -- add @angular/material
-```
-
-Install [NGRX](https://ngrx.io) [Store](https://ngrx.io/guide/store) for state management
+Install [NgRx](https://ngrx.io) for state management
 
 ```bash
 npm run ng -- add @ngrx/store --minimal=false --statePath=core/store
@@ -90,21 +77,4 @@ npm run ng -- add @ngrx/store-devtools --skip-confirmation
 npm run ng -- add @ngrx/entity --skip-confirmation
 npm run ng -- add @ngrx/data --defaultCollection --skip-confirmation
 npm run ng -- add @ngrx/effects --skip-confirmation
-```
-
-#### Blog Commands Used
-
-<!-- Install [Scully](https://scully.io) ([repo](https://github.com/scullyio/scully), [example](https://solocoding.dev))
-
-```bash
-npm run ng -- add @scullyio/init
-``` -->
-
-Install [NGX-Markdown](https://github.com/jfcere/ngx-markdown) for Angular markdown components with scripts/styles
-
-- other refs: [makeuseof guide](https://www.makeuseof.com/angular-markdown-files-website), [blog guide](https://daviddalbusco.medium.com/add-a-blog-to-your-angular-website-using-markdown-files-31cdb0627bdd), [clean blog theme](https://startbootstrap.com/theme/clean-blog)
-
-```bash
-npm i ngx-markdown marked prismjs
-npm i -D @types/marked
 ```
