@@ -2,27 +2,72 @@
 
 ## Web App ([repo](https://github.com/david-rachwalik/Templates-Angular18-NgRx))
 
-Demonstration site for [NgRx](https://ngrx.io) (Reactive State for Angular) and its multiple uses
+Demonstration site for [NgRx](https://ngrx.io) (Reactive State for Angular).&nbsp; NgRx is a state management library based on Redux.
+
+- **[Store](https://ngrx.io/guide/store):** Centralized state container
+- **Actions:** Events that describe a state change
+- **Reducers:** Pure functions to handle actions and update the state
+- **Selectors:** Functions to query the store
 
 ### Project Tech Stack
 
 _Languages:_ HTML, CSS, JavaScript, SCSS, TypeScript
 
-Angular, Angular Material, NGRX (data store, redux)
+Angular, Angular Material, NgRx (data store, redux)
 
-### Project Commands Used
+---
+
+### Common Project Commands
+
+Ensure that Docker is running.&nbsp; When the project is opened in VS Code, open the **Command Palette** (`Ctrl+Shift+P`) and select **Dev Containers: Reopen in Container** (or select **Dev Containers: Rebuild and Reopen in Container** if using for the first time).
+
+#### Dev Container Commands
+
+List running containers (shows IDs and names)
+
+```bash
+docker ps
+```
+
+Connect to container by ID or name
+
+```bash
+docker exec -it --user vscode -w /workspaces/<project-name> <container-id> /bin/zsh
+```
+
+#### Angular 'generate' Commands Used
+
+Generate a new Angular module
+
+```bash
+npm run ng -- g m <module-name>
+```
+
+Generate a new Angular component
+
+```bash
+npm run ng -- g c <component-name>
+```
+
+Example of generating the Blog section
+
+```bash
+npm run ng -- g m modules/blog --module=app --route=blog --routing
+npm run ng -- g c modules/blog/pages/blog --module=blog
+npm run ng -- g c modules/blog/pages/blog-post --module=blog
+```
+
+---
+
+---
+
+### Project Creation Commands Used
 
 Generate a new Angular application ([tutorial](https://angular.io/tutorial/toh-pt5), [layouts](https://indepth.dev/posts/1235/how-to-reuse-common-layouts-in-angular-using-router-2), [RxJS](https://www.learnrxjs.io))
 
 ```bash
 ng new <app-name>
 ```
-
-<!-- Install [PostCSS](https://postcss.org) ([plugins](https://www.postcss.parts))
-
-```bash
-npm i -D postcss postcss-import postcss-advanced-variables postcss-nested-ancestors postcss-apply postcss-nested postcss-scss autoprefixer cssnano
-``` -->
 
 Install [Tailwind CSS](https://tailwindcss.com/docs/guides/angular) with configuration file ([CheatSheet](https://nerdcave.com/tailwind-cheat-sheet), [Need-to-Know](https://www.bitovi.com/blog/tailwind-css-with-angular-v12-what-you-need-to-know), [Use with preprocessors](https://tailwindcss.com/docs/using-with-preprocessors), [Box Shadow](https://tailwindcss.com/docs/box-shadow))
 
@@ -31,45 +76,28 @@ npm i -D tailwindcss
 npx tailwindcss init
 ```
 
-<!-- Install lodash
-
-```bash
-npm i lodash
-npm i @types/lodash
-``` -->
-
 Install [Angular Material](https://material.angular.io) ("custom" theme, 'y' typography, 'y' animations) ([background](https://material.angular.io/guide/theming#application-background-color))
 
 ```bash
-ng add @angular/material
+npm run ng -- add @angular/material
 ```
 
 Install [NGRX](https://ngrx.io) [Store](https://ngrx.io/guide/store) for state management
 
 ```bash
-ng add @ngrx/store --minimal=false --statePath=core/store
-ng add @ngrx/store-devtools --skip-confirmation
-ng add @ngrx/effects --skip-confirmation
-ng add @ngrx/entity --skip-confirmation
-ng add @ngrx/data --skip-confirmation
+npm run ng -- add @ngrx/store --minimal=false --statePath=core/store
+npm run ng -- add @ngrx/store-devtools --skip-confirmation
+npm run ng -- add @ngrx/entity --skip-confirmation
+npm run ng -- add @ngrx/data --defaultCollection --skip-confirmation
+npm run ng -- add @ngrx/effects --skip-confirmation
 ```
 
----
-
-#### Deployment Options
-
-Install [GitHub Pages deployment package for Angular](https://www.npmjs.com/package/angular-cli-ghpages) ([Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows))
-
-```bash
-ng add angular-cli-ghpages
-```
-
-#### Blog Options
+#### Blog Commands Used
 
 <!-- Install [Scully](https://scully.io) ([repo](https://github.com/scullyio/scully), [example](https://solocoding.dev))
 
 ```bash
-ng add @scullyio/init
+npm run ng -- add @scullyio/init
 ``` -->
 
 Install [NGX-Markdown](https://github.com/jfcere/ngx-markdown) for Angular markdown components with scripts/styles
@@ -79,57 +107,4 @@ Install [NGX-Markdown](https://github.com/jfcere/ngx-markdown) for Angular markd
 ```bash
 npm i ngx-markdown marked prismjs
 npm i -D @types/marked
-```
-
----
-
-### Angular 'generate' Commands Used
-
-Generate a new Angular component
-
-```bash
-ng g c <component-name>
-```
-
-Generate a new Angular module
-
-```bash
-ng g m <module-name>
-```
-
----
-
-### Angular 'update' Commands Used
-
-Globally install the latest Angular framework ([version compatibility](https://angular.io/guide/versions))
-
-```bash
-npm i -g @angular/cli@<release-version>
-```
-
-[Update](https://update.angular.io) Angular framework & Angular Materials
-
-```bash
-ng update @angular/core@<release-version> @angular/cli@<release-version>
-ng update @angular/material@<release-version>
-```
-
-### Angular Migration Commands (optional)
-
-[Migrate](https://material.angular.io/guide/mdc-migration) legacy Material components to MDC-based ones
-
-```bash
-ng generate @angular/material:mdc-migration
-```
-
-[Migrate](https://angular.io/guide/standalone-migration) existing Angular project to standalone
-
-```bash
-ng generate @angular/core:standalone
-```
-
-[Migrate](https://blog.angular.io/introducing-angular-v17-4d7033312e4b) existing Angular project to use new [control flow](https://angular.io/guide/control_flow) (v17+)
-
-```bash
-ng generate @angular/core:control-flow
 ```
